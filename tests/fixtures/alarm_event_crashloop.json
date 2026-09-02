@@ -1,0 +1,44 @@
+{
+  "version": "0",
+  "id": "b1f6a2b4-1234-4a1b-9c3d-fixture-crashloop",
+  "detail-type": "CloudWatch Alarm State Change",
+  "source": "aws.cloudwatch",
+  "account": "340924313311",
+  "time": "2026-09-02T14:03:11Z",
+  "region": "us-east-1",
+  "resources": [
+    "arn:aws:cloudwatch:us-east-1:340924313311:alarm:eks-crashloop-backoff-payments-api"
+  ],
+  "detail": {
+    "alarmName": "eks-crashloop-backoff-payments-api",
+    "state": {
+      "value": "ALARM",
+      "reason": "Threshold Crossed: pod_number_of_container_restarts > 3 for 3 datapoints within 15 minutes",
+      "timestamp": "2026-09-02T14:03:11.000+0000"
+    },
+    "previousState": {
+      "value": "OK"
+    },
+    "configuration": {
+      "description": "Fires when a pod in the payments namespace restarts more than 3 times in 15 minutes - typically CrashLoopBackOff.",
+      "metrics": [
+        {
+          "id": "m1",
+          "metricStat": {
+            "metric": {
+              "namespace": "ContainerInsights",
+              "name": "pod_number_of_container_restarts",
+              "dimensions": {
+                "ClusterName": "redhat-25c-dev",
+                "Namespace": "payments",
+                "PodName": "payments-api-7f8d9c9c6b-4xkpq"
+              }
+            },
+            "period": 300,
+            "stat": "Sum"
+          }
+        }
+      ]
+    }
+  }
+}

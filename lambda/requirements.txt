@@ -1,0 +1,8 @@
+# Runtime dependencies packaged into the Lambda zip (see terraform/lambda.tf,
+# archive_file). boto3/botocore ship with the Lambda Python runtime already,
+# but I pin them here anyway so `pip install -r requirements.txt -t lambda/`
+# produces the same versions locally that I tested against - not whatever
+# AWS happens to have baked into this month's runtime image.
+boto3>=1.34,<2.0
+botocore>=1.34,<2.0
+kubernetes>=29.0,<31.0

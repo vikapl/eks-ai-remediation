@@ -1,0 +1,13 @@
+# Local Python virtualenv used to run tests/local_test.py
+.venv/
+__pycache__/
+*.pyc
+
+# Terraform working state - never commit real state or provider caches
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/build/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example

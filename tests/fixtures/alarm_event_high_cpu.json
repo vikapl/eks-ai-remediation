@@ -1,0 +1,44 @@
+{
+  "version": "0",
+  "id": "b1f6a2b4-1234-4a1b-9c3d-fixture-highcpu",
+  "detail-type": "CloudWatch Alarm State Change",
+  "source": "aws.cloudwatch",
+  "account": "340924313311",
+  "time": "2026-09-02T18:22:40Z",
+  "region": "us-east-1",
+  "resources": [
+    "arn:aws:cloudwatch:us-east-1:340924313311:alarm:eks-high-cpu-checkout-worker"
+  ],
+  "detail": {
+    "alarmName": "eks-high-cpu-checkout-worker",
+    "state": {
+      "value": "ALARM",
+      "reason": "Threshold Crossed: pod_cpu_utilization > 85 for 3 datapoints within 15 minutes",
+      "timestamp": "2026-09-02T18:22:40.000+0000"
+    },
+    "previousState": {
+      "value": "OK"
+    },
+    "configuration": {
+      "description": "Fires when checkout-worker pod CPU utilization exceeds 85% sustained.",
+      "metrics": [
+        {
+          "id": "m1",
+          "metricStat": {
+            "metric": {
+              "namespace": "ContainerInsights",
+              "name": "pod_cpu_utilization",
+              "dimensions": {
+                "ClusterName": "redhat-25c-dev",
+                "Namespace": "default",
+                "PodName": "checkout-worker-5d8f77b9c4-p2n7t"
+              }
+            },
+            "period": 300,
+            "stat": "Average"
+          }
+        }
+      ]
+    }
+  }
+}

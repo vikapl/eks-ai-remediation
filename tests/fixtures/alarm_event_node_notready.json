@@ -1,0 +1,43 @@
+{
+  "version": "0",
+  "id": "b1f6a2b4-1234-4a1b-9c3d-fixture-notready",
+  "detail-type": "CloudWatch Alarm State Change",
+  "source": "aws.cloudwatch",
+  "account": "340924313311",
+  "time": "2026-09-02T09:47:02Z",
+  "region": "us-east-1",
+  "resources": [
+    "arn:aws:cloudwatch:us-east-1:340924313311:alarm:eks-node-notready-general"
+  ],
+  "detail": {
+    "alarmName": "eks-node-notready-general",
+    "state": {
+      "value": "ALARM",
+      "reason": "Threshold Crossed: cluster_node_count - cluster_node_count_running >= 1 for 2 datapoints within 10 minutes",
+      "timestamp": "2026-09-02T09:47:02.000+0000"
+    },
+    "previousState": {
+      "value": "OK"
+    },
+    "configuration": {
+      "description": "Fires when one or more nodes in the general nodegroup report NotReady.",
+      "metrics": [
+        {
+          "id": "m1",
+          "metricStat": {
+            "metric": {
+              "namespace": "ContainerInsights",
+              "name": "cluster_failed_node_count",
+              "dimensions": {
+                "ClusterName": "redhat-25c-dev",
+                "NodegroupName": "general"
+              }
+            },
+            "period": 300,
+            "stat": "Maximum"
+          }
+        }
+      ]
+    }
+  }
+}
